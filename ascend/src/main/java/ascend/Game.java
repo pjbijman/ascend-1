@@ -6,7 +6,7 @@ import java.util.Random;
 public class Game {
 	
 	static Random rng=new Random();
-	final int height = 32, width=32, roomAmount=10, maxRoomHeight=8, maxRoomWidth=8, minRoomHeight=4, minRoomWidth=4;
+	final int height = 32, width=64, roomAmount=10, maxRoomHeight=8, maxRoomWidth=8, minRoomHeight=4, minRoomWidth=4;
 	Tile[][] field = new Tile[height][width];
 	ArrayList<Room> rooms = new ArrayList<Room>(roomAmount);
 	ArrayList<Tile> corridorTiles = new ArrayList<Tile>();
@@ -36,7 +36,7 @@ public class Game {
 	static public void printField(Game game){
 		for(int y=0; y<game.height; y++){
 			for(int x=0; x<game.width; x++){
-				System.out.print(game.field[x][y].attribute);
+				System.out.print(game.field[y][x].attribute);
 			}
 			System.out.println();
 		}
@@ -120,11 +120,11 @@ public class Game {
 	
 	public void setTileAttributes(){
 		for(Tile corridorTile : corridorTiles){
-			corridorTile.attribute = '.';
+			corridorTile.attribute = ' ';
 		}
 		for(Room room : rooms){
 			for(Tile roomTile : room.tiles){
-				roomTile.attribute = '.';
+				roomTile.attribute = ' ';
 			}
 		}
 	}
