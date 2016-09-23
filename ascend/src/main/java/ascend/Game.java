@@ -6,7 +6,7 @@ import java.util.Random;
 public class Game {
 	
 	static Random rng=new Random();
-	final int height = 32, width=64, roomAmount=10, maxRoomHeight=8, maxRoomWidth=8, minRoomHeight=4, minRoomWidth=4;
+	final int height = 32, width=64, roomAmount=14, maxRoomHeight=8, maxRoomWidth=8, minRoomHeight=4, minRoomWidth=4;
 	Tile[][] field = new Tile[height][width];
 	ArrayList<Room> rooms = new ArrayList<Room>(roomAmount);
 	ArrayList<Tile> corridorTiles = new ArrayList<Tile>();
